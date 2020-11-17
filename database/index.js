@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true, useUnifiedTopology: true });
 
-let reviewSchema = new mongoose.Schema({
+const reviewSchema = new mongoose.Schema({
   user_id: Number,
   product_id: Number,
   user_name: String,
@@ -22,19 +22,17 @@ let reviewSchema = new mongoose.Schema({
   }
 })
 
-
-let productSchema = new mongoose.Schema({
+const productSchema = new mongoose.Schema({
   user_id: Number,
   product_id: Number,
   product_name: String,
   product_brand: String
 });
 
-let Review = mongoose.model("Review", reviewSchema);
+const Review = mongoose.model("Review", reviewSchema);
+const Product = mongoose.model("Product", productSchema);
 
-let Product = mongoose.model("Product", productSchema);
-
-let save = (input) => {
+const save = (input) => {
   Review.insertMany(input)
     .then(result => console.log(result))
     .catch(error => console.log(error))
@@ -45,4 +43,3 @@ let save = (input) => {
 }
 
 module.exports = { Review, Product }
-// module.exports.save = save;
