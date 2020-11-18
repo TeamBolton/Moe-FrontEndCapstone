@@ -11,7 +11,6 @@ const url = "mongodb://localhost/test";
 //database name
 const dbName = "test";
 
-// use connect method to connect to server
 MongoClient.connect(url, function (err, client) {
 
   assert.equal(null, err)
