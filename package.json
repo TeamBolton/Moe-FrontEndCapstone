@@ -9,7 +9,8 @@
   },
   "scripts": {
     "seed": "node server/seed.js",
-    "start": "node ./server/index.js"
+    "start": "node ./server/index.js",
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^0.21.0",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "faker": "^5.1.0",
+    "jest": "^26.6.3",
     "lodash": "^4.17.20",
     "mongodb": "^3.6.3"
   }
